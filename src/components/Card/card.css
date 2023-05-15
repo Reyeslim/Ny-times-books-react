@@ -1,6 +1,6 @@
 .cardContainer {
-    height: 128px;
-    width: 128px;
+    height: 150px;
+    width: 150px;
 }
 
 .cardContent {
@@ -8,17 +8,21 @@
     border-radius: 5px;
     margin: 5px;
     padding: 16px;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .cardHeader {
     border-bottom: 1px solid #add8e6;
     font-size: 15px;
     font-weight: bold;
-    margin: 0 10px;
-    padding: 15px;
+    /* margin: 0 10px;
+    padding: 15px; */
 }
 
 .cardFooter {
-    line-height: 2.5;
+   margin-top: 16px;
+}
+
+.cardFooterContent {
+    margin-top: 16px;
 }

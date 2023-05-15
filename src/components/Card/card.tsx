@@ -1,15 +1,18 @@
 import { FC } from "react"
 import "./card.css"
+import { Props } from "./Types"
 
-const Card: FC = () => {
+const Card: FC<Props> = ({title, updated}) => {
     return (
         <div className="cardContainer">
             <div className="cardContent">
                 <div className="cardHeader">
-                    titulo
+                    {title}
                 </div>
                 <div className="cardFooter">
-                    contenido
+                    <div className="cardFooterContent">
+                    {updated}
+                    </div>
                 </div>
             </div>
         </div>

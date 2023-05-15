@@ -1,20 +1,41 @@
-import { FC } from "react"
+import { FC, useCallback, useEffect, useState } from "react"
 import Header from "../../components/Header/header"
-import { cards } from "./constants"
 import "./dashboard.css"
 import Card from "../../components/Card/card"
 import { getNyCategories } from "../../services/nytimes/nytimes"
+import { Category } from "../../models/category"
 
 
 const Dashboard: FC = () => {
-    getNyCategories()
+    const [categories, setCategories] = useState<Category[]>([])
+
+
+    const [isLoading, setIsLoading] = useState(true)
+
+    const handleSetCategories = useCallback(async () => {
+        const categoriesList = await getNyCategories()
+        setCategories(categoriesList)
+        setIsLoading(false)
+    }, [])
+
+    useEffect(() => {
+        handleSetCategories()
+    }, [handleSetCategories])
+
+    if (isLoading) {
+        return (
+            <div>
+                CARGANDO...
+            </div>
+        )
+    }
 
     return (
         <div>
             <Header />
             <div className="dashboardContent">
                 <div className="dashboardCards">
-                    {cards.map(card => (<Card />))}
+                    {categories.map((category, title) => (<Card key={title} title={category.title} updated={category.updated} />))}
                 </div>
             </div>
         </div>

@@ -1,12 +1,12 @@
-import React from 'react';
-import Dashboard from './views/Dashboard';
+import React from 'react'
+import Router from './containers/Router/router'
 
 function App() {
   return (
     <div className="App">
-      <Dashboard />
+      <Router />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

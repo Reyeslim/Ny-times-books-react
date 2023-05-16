@@ -1,4 +1,6 @@
 export type Props = {
-    title: string,
-    updated: string
+  title: string
+  extraInfo: string
+  isDetails?: boolean
+  onClick?: () => void
 }

@@ -1,0 +1,17 @@
+.detailsBtn {
+    background-color: #fff;
+    border: 1px solid #add8e6;
+    border-radius: 5px;
+    color:#add8e6;
+    cursor: pointer;
+    /* margin-top: 20px; */
+    padding: 8px 16px;
+    transition: all 200ms ease-in-out;
+
+}
+
+.detailsBtn:hover {
+    background-color: #add8e6;
+    color:#fff;
+    /* width: 100%; */
+}

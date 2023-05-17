@@ -1,13 +1,13 @@
 import { FC } from 'react'
-import './header.css'
+import { Container, Content, Title } from './headerStyles'
 
 const Header: FC = () => {
   return (
-    <header className="headerContainer">
-      <div className="headerContent">
-        <h2 className="headerTitle">The New York Times</h2>
-      </div>
-    </header>
+    <Container>
+      <Content>
+        <Title>The New York Times</Title>
+      </Content>
+    </Container>
   )
 }
 

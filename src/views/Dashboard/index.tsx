@@ -1,10 +1,10 @@
 import { FC, useCallback, useEffect, useState } from 'react'
 import Header from '../../components/Header/header'
-import './dashboard.css'
 import Card from '../../components/Card/card'
 import { getNyCategories } from '../../services/nytimes/nytimes'
 import { Category } from '../../models/category'
 import { useNavigate } from 'react-router-dom'
+import { Cards, Container, Content } from './dashboardStyles'
 
 
 const Dashboard: FC = () => {
@@ -33,10 +33,10 @@ const Dashboard: FC = () => {
   }
 
   return (
-    <div>
+    <Container>
       <Header />
-      <div className="dashboardContent">
-        <div className="dashboardCards">
+      <Content>
+        <Cards>
           {categories.map((category, index) => (
             <Card
               key={index}
@@ -45,9 +45,9 @@ const Dashboard: FC = () => {
               extraInfo={category.updated}
             />
           ))}
-        </div>
-      </div>
-    </div>
+        </Cards>
+      </Content>
+    </Container>
   )
 }
 

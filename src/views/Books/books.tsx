@@ -2,9 +2,9 @@ import { FC, useCallback, useEffect, useState } from 'react'
 import { getBookList } from '../../services/nytimes/nytimes'
 import { Book } from '../../models/Book'
 import Card from '../../components/Card/card'
-import './books.css'
 import Header from '../../components/Header/header'
 import { useParams } from 'react-router-dom'
+import { BooksList, Container, Content } from './booksStyles'
 
 const Books: FC = () => {
   const [books, setBooks] = useState<Book[]>([])
@@ -13,11 +13,11 @@ const Books: FC = () => {
   const { listName } = useParams()
 
   const handleSetBooks = useCallback(async () => {
-    if(listName) {
+    if (listName) {
       const categoriesList = await getBookList(listName)
       setBooks(categoriesList)
     }
-    
+
     setIsLoading(false)
   }, [listName])
 
@@ -29,16 +29,21 @@ const Books: FC = () => {
     return <div>CARGANDO...</div>
   }
   return (
-    <div>
+    <Container>
       <Header />
-      <div className="booksContainer">
-        <div className="books">
+      <Content>
+        <BooksList>
           {books.map((book, index) => (
-            <Card key={index} title={book.title} extraInfo={book.author} isDetails={true} />
+            <Card
+              key={index}
+              title={book.title}
+              extraInfo={book.author}
+              isDetails={true}
+            />
           ))}
-        </div>
-      </div>
-    </div>
+        </BooksList>
+      </Content>
+    </Container>
   )
 }
 

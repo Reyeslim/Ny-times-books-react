@@ -1,9 +1,13 @@
 import { FC } from 'react'
+import { CustomButton } from './btnStyles'
 import type { Props } from './types'
-import './button.css'
 
 const Button: FC<Props> = ({ children, onClick }) => {
-  return <button onClick={onClick} className='detailsBtn'>{children}</button>
+  return (
+    <CustomButton onClick={onClick}>
+      {children}
+    </CustomButton>
+  )
 }
 
 export default Button

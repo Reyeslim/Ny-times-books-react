@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import { CustomButton } from './btnStyles'
 import type { Props } from './types'
 
@@ -10,4 +10,4 @@ const Button: FC<Props> = ({ children, onClick }) => {
   )
 }
 
-export default Button
+export default memo(Button)

@@ -5,7 +5,7 @@ export const InitialValues = {
 }
 
 export const ValidationSchema = object({
-  name: string().required(),
+  name: string(),
   email: string().email('No es un email válido').required(),
   password: string().required(),
 })

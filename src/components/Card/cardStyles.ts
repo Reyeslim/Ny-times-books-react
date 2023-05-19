@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import DefaultButton from '../../components/Button/button'
 
 export const Container = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.blue100};
@@ -24,4 +25,7 @@ export const FooterContent = styled.div`
 `
 export const ExtraInfo = styled.div`
   margin-bottom: 25px;
+`
+export const Button = styled(DefaultButton)`
+  width: 100%;
 `

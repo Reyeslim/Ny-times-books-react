@@ -1,4 +1,4 @@
-import { FC, memo, useCallback } from 'react'
+import { FC, memo } from 'react'
 import { Formik } from 'formik'
 import Button from '../../../components/Button/button'
 import {
@@ -9,16 +9,13 @@ import {
   InputController,
   InputError,
   Label,
-  Legend,
-  LegendController,
   Link,
 } from './signupStyles'
 import { InitialValues, ValidationSignupSchema } from './constant'
+import useLogic from './logic'
 
 const Signup: FC = () => {
-  const handleOnSubmit = useCallback((values: {email: string; password: string}) => {
-    console.log(values)
-  }, [])
+  const { handleOnSubmit } = useLogic()
   return (
     <Container>
       <Formik
@@ -29,23 +26,27 @@ const Signup: FC = () => {
         {({ errors, handleSubmit, handleChange, values }) => (
           <Form onSubmit={handleSubmit}>
             <FormContent>
-              <LegendController>
-                <Legend>Crear cuenta</Legend>
-              </LegendController>
               <InputController>
                 <Label>Correo Electrónico</Label>
-                <Input type="email" name="email" onChange={handleChange} value={values.email}/>
+                <Input
+                  type="email"
+                  name="email"
+                  onChange={handleChange}
+                  value={values.email}
+                />
                 {errors?.email && <InputError>{errors.email}</InputError>}
               </InputController>
               <InputController>
                 <Label>Contraseña</Label>
-                <Input type="password" name="password" onChange={handleChange} value={values.password}/>
+                <Input
+                  type="password"
+                  name="password"
+                  onChange={handleChange}
+                  value={values.password}
+                />
                 {errors?.password && <InputError>{errors.password}</InputError>}
               </InputController>
-              <Button
-                type="submit"
-                onClick={() => console.log(values)}
-              >
+              <Button type="submit">
                 Crear cuenta
               </Button>
               <Link to="/login">Inicia sesión</Link>

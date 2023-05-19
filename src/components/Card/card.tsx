@@ -1,6 +1,6 @@
 import { FC, memo, useCallback } from 'react'
-import Button from '../Button/button'
 import {
+  Button,
   Container,
   Content,
   ExtraInfo,

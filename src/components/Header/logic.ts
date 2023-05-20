@@ -6,6 +6,7 @@ const useLogic = () => {
     const navigate = useNavigate()
     const handleLogout = useCallback(async () => {
         await logout()
+        window.localStorage.clear()
         navigate('/login')
     }, [navigate])
 

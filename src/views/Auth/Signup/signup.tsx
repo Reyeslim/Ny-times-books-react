@@ -13,9 +13,10 @@ import {
 } from './signupStyles'
 import { InitialValues, ValidationSignupSchema } from './constant'
 import useLogic from './logic'
+import { Props } from './types'
 
-const Signup: FC = () => {
-  const { handleOnSubmit } = useLogic()
+const Signup: FC<Props> = ({onSignup}) => {
+  const { handleOnSubmit } = useLogic(onSignup)
   return (
     <Container>
       <Formik
@@ -46,9 +47,7 @@ const Signup: FC = () => {
                 />
                 {errors?.password && <InputError>{errors.password}</InputError>}
               </InputController>
-              <Button type="submit">
-                Crear cuenta
-              </Button>
+              <Button type="submit">Crear cuenta</Button>
               <Link to="/login">Inicia sesión</Link>
             </FormContent>
           </Form>

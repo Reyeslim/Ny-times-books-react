@@ -2,9 +2,10 @@ import { useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { login } from '../../../services/firebase/auth'
 import { setToken } from '../../../services/storage/token'
+import { Props } from './types'
 
 
-const useLogic = () => {
+const useLogic = (onLogin: Props['onLogin']) => {
   const navigate = useNavigate()
   const handleOnSubmit = useCallback(
     async (values: { email: string; password: string }) => {
@@ -13,8 +14,9 @@ const useLogic = () => {
         console.log(user)
        
         if (user) {
-           //@ts-ignore
-          setToken(user.accessToken)
+          const token = await user.getIdToken()
+          setToken(token)
+          onLogin()
           navigate('/dashboard')
         } 
       } catch (error) {

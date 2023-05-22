@@ -5,7 +5,7 @@ import { BooksList, Container, Content } from './booksStyles'
 import useBookLogic from './logic'
 
 const Books: FC = () => {
-  const {isLoading, books} = useBookLogic()
+  const { isLoading, books } = useBookLogic()
 
   if (isLoading) {
     return <div>CARGANDO...</div>

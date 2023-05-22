@@ -15,7 +15,7 @@ import { InitialValues, ValidationSignupSchema } from './constant'
 import useLogic from './logic'
 import { Props } from './types'
 
-const Signup: FC<Props> = ({onSignup}) => {
+const Signup: FC<Props> = ({ onSignup }) => {
   const { handleOnSubmit } = useLogic(onSignup)
   return (
     <Container>

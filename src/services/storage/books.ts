@@ -11,6 +11,6 @@ export const getCachedBookList = (listName: string): Book[] => {
 }
 
 export const setCachedBookList = (listName: string, books: Book[]) => {
-    const key = buildKey(listName)
+  const key = buildKey(listName)
   window.localStorage.setItem(key, JSON.stringify(books))
 }

@@ -42,7 +42,7 @@ export const normalizeBook = (input: NyTimesBookResult) => ({
   title: input?.title || '',
   image: input?.book_image || '',
   author: input?.author || '',
-  contributor: input?.contributor || ''
+  contributor: input?.contributor || '',
 })
 
 export type Book = ReturnType<typeof normalizeBook>

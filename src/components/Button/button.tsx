@@ -7,10 +7,15 @@ const Button: FC<Props> = ({
   children,
   onClick,
   type = 'button',
-  variant = 'primary'
+  variant = 'primary',
 }) => {
   return (
-    <CustomButton $variant={variant} className={className} type={type} onClick={onClick}>
+    <CustomButton
+      $variant={variant}
+      className={className}
+      type={type}
+      onClick={onClick}
+    >
       {children}
     </CustomButton>
   )

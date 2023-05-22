@@ -2,8 +2,9 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import Dashboard from '../../views/Dashboard'
 import Books from '../../views/Books/books'
 import { FC } from 'react'
+import { PrivProps } from './types'
 
-export const PrivateRoutes: FC = () => {
+export const PrivateRoutes: FC<PrivProps> = ({ onLogout }) => {
   return (
     <Routes>
       <Route path="/dashboard" element={<Dashboard />} />

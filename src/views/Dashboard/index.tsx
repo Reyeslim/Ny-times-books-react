@@ -6,7 +6,7 @@ import useLogic from './logic'
 
 
 const Dashboard: FC = () => {
-  const {isLoading, categories, handleGoToDetails} = useLogic()
+  const { isLoading, categories, handleGoToDetails } = useLogic()
 
   if (isLoading) {
     return <div>CARGANDO...</div>

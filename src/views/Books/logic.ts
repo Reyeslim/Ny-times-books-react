@@ -24,7 +24,7 @@ const useBookLogic = () => {
 
   return {
     books,
-    isLoading
+    isLoading,
   }
 }
 

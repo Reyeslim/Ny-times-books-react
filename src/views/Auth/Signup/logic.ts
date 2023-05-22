@@ -10,7 +10,7 @@ const useLogic = () => {
       try {
         const user = await signup(values.email, values.password)
         console.log(user)
-        // @ts-ignore
+        
         if (user) {
         // @ts-ignore
           setToken(user.accessToken)

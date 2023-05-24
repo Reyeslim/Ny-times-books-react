@@ -1,9 +1,10 @@
 import { FC, memo } from 'react'
 import { Button, Container, Content, Title } from './headerStyles'
 import useLogic from './logic'
+import { Props } from './types'
 
-const Header: FC = () => {
-  const { handleLogout } = useLogic()
+const Header: FC<Props> = ({ onLogout }) => {
+  const { handleLogout } = useLogic(onLogout)
   return (
     <Container>
       <Content>

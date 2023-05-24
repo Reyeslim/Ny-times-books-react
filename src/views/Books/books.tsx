@@ -3,8 +3,9 @@ import Card from '../../components/Card/card'
 import Header from '../../components/Header/header'
 import { BooksList, Container, Content } from './booksStyles'
 import useBookLogic from './logic'
+import { Props } from './types'
 
-const Books: FC = () => {
+const Books: FC<Props> = ({ onLogout }) => {
   const { isLoading, books } = useBookLogic()
 
   if (isLoading) {
@@ -12,7 +13,7 @@ const Books: FC = () => {
   }
   return (
     <Container>
-      <Header />
+      <Header onLogout={onLogout} />
       <Content>
         <BooksList>
           {books.map((book, index) => (

@@ -3,9 +3,9 @@ import Header from '../../components/Header/header'
 import Card from '../../components/Card/card'
 import { Cards, Container, Content } from './dashboardStyles'
 import useLogic from './logic'
+import { Props } from './types'
 
-
-const Dashboard: FC = () => {
+const Dashboard: FC<Props> = ({ onLogout }) => {
   const { isLoading, categories, handleGoToDetails } = useLogic()
 
   if (isLoading) {
@@ -14,7 +14,7 @@ const Dashboard: FC = () => {
 
   return (
     <Container>
-      <Header />
+      <Header onLogout={onLogout}/>
       <Content>
         <Cards>
           {categories.map((category, index) => (

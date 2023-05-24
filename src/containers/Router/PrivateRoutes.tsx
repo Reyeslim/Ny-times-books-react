@@ -7,8 +7,8 @@ import { PrivProps } from './types'
 export const PrivateRoutes: FC<PrivProps> = ({ onLogout }) => {
   return (
     <Routes>
-      <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/dashboard/:listName" element={<Books />} />
+      <Route path="/dashboard" element={<Dashboard onLogout={onLogout}/>} />
+      <Route path="/dashboard/:listName" element={<Books onLogout={onLogout}/>} />
       <Route path="/*" element={<Navigate replace to="/dashboard" />} />
     </Routes>
   )

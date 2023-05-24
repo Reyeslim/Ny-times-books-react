@@ -6,7 +6,7 @@ import useBookLogic from './logic'
 import { Props } from './types'
 
 const Books: FC<Props> = ({ onLogout }) => {
-  const { isLoading, books } = useBookLogic()
+  const { isLoading, books, handleRemoveBook } = useBookLogic()
 
   if (isLoading) {
     return <div>CARGANDO...</div>
@@ -22,6 +22,7 @@ const Books: FC<Props> = ({ onLogout }) => {
               title={book.title}
               extraInfo={book.author}
               isDetails={true}
+              onClick={() => handleRemoveBook(book.title)}
             />
           ))}
         </BooksList>

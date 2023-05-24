@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import DefaultButton from '../../components/Button/button'
+import RemoveButton from '../../components/Button/button'
 
 export const Container = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.blue100};
@@ -28,4 +29,14 @@ export const ExtraInfo = styled.div`
 `
 export const Button = styled(DefaultButton)`
   width: 100%;
+`
+export const Eliminate = styled(RemoveButton)`
+  background-color: red;
+  border: 1px solid red;
+  color: white;
+
+  &:hover {
+    background-color: black;
+    border: 1px solid black;
+  }
 `

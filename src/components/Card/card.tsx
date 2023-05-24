@@ -3,6 +3,7 @@ import {
   Button,
   Container,
   Content,
+  Eliminate,
   ExtraInfo,
   Footer,
   FooterContent,
@@ -24,6 +25,7 @@ const Card: FC<Props> = ({ title, extraInfo, isDetails = false, onClick }) => {
           <FooterContent>
             <ExtraInfo>{extraInfo}</ExtraInfo>
             {!isDetails && <Button onClick={handleClick}>Detalles</Button>}
+            {isDetails && <Eliminate onClick={handleClick}>Eliminar</Eliminate>}
           </FooterContent>
         </Footer>
       </Content>

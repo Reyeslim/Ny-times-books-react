@@ -1,8 +1,8 @@
 import { Book } from '../../models/Book'
 
-const NY_BOOKS_LIST_KEY = 'nyBooks'
+export const NY_BOOKS_LIST_KEY = 'nyBooks'
 
-const buildKey = (listName: string) => `${NY_BOOKS_LIST_KEY}-${listName}`
+export const buildKey = (listName: string) => `${NY_BOOKS_LIST_KEY}-${listName}`
 
 export const getCachedBookList = (listName: string): Book[] => {
   const key = buildKey(listName)
